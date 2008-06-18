@@ -1,6 +1,6 @@
 == Simplified Metatags
 
-Adding metatags never was so easy!
+Adding metatags never was so easy.
 
 == Example
 
@@ -16,12 +16,12 @@ Adding metatags never was so easy!
     ...
 
     ##
-    # app/controllers/welcome_controller.rb
+    # app/controllers/application_controller.rb
     #
-    class WelcomeController < ApplicationController
+    class ApplicationController < ActionController::Base
 
-      add_meta_description "Page description"
-      add_meta_keywords "keyword1, keyword2, keyword3"
+      add_meta_description "Another Rails Application"
+      add_meta_keywords "flowers, holidays, marseille"
 
       def index
       end
@@ -32,13 +32,13 @@ Adding metatags never was so easy!
     # app/controllers/pages_controller.rb
     #
     class PagesController < ApplicationController
-    
+
       def show
         @page = Page.find_by_permalink_and_status(params[:id], true)
         add_meta_description @page.excerpt
         add_meta_keywords @page.tags.join(", ")
       end
-    
+
     end
 
 Copyright (c) 2008 Francesc Esplugas Marti, released under the MIT license
