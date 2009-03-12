@@ -17,7 +17,7 @@ module SimplifiedMetatags
       @meta_video << meta('video_type', video_type)
       @meta_video << meta('medium', medium)
 
-      @meta_video.join!("\n")
+      @meta_video = @meta_video.join("\n")
     end
 
     def self.add_meta_video(content, options = {})
